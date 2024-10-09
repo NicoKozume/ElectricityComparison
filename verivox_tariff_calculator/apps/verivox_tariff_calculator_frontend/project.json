@@ -62,6 +62,10 @@
           "buildTarget": "verivox_tariff_calculator_frontend:build:development"
         }
       },
+      "options": {
+        "proxyConfig": "apps/verivox_tariff_calculator_frontend/src/proxy.conf.json",
+        "verbose": true
+      },
       "defaultConfiguration": "development"
     },
     "extract-i18n": {
