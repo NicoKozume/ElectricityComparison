@@ -63,8 +63,7 @@
         }
       },
       "options": {
-        "proxyConfig": "apps/verivox_tariff_calculator_frontend/src/proxy.conf.json",
-        "verbose": true
+        "proxyConfig": "apps/verivox_tariff_calculator_frontend/src/proxy.conf.json"
       },
       "defaultConfiguration": "development"
     },
