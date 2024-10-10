@@ -6,10 +6,26 @@ import { DataService } from '../service/DataService';
 import { TariffInformation } from '../dtos/TariffInformation';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatListModule } from '@angular/material/list'
+import { MatButtonModule } from '@angular/material/button'
+import { MatInputModule } from '@angular/material/input'
 
+const appImports = [
+  NxWelcomeComponent, 
+  RouterModule, 
+  CommonModule, 
+  FormsModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatListModule,
+  MatButtonModule,
+  MatInputModule
+]
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule, CommonModule, FormsModule],
+  imports: appImports,
   providers: [HttpClient],
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -28,3 +44,4 @@ export class AppComponent {
     });
   }
 }
+

@@ -1,14 +1,29 @@
-<div>
-    <h2>Electricity Tariff Comparison</h2>
-    <form (ngSubmit)="compareTariffs()">
-      <label for="consumption">Annual Consumption (kWh):</label>
-      <input type="number" [(ngModel)]="consumption" name="consumption" required>
-      <button type="submit">Compare</button>
-    </form>
-  
-    <ul *ngIf="tariffs.length > 0">
-      <li *ngFor="let tariff of tariffs">
-        {{ tariff.name}}: {{ tariff.costs| currency: 'EUR' }} per year
-      </li>
-    </ul>
-  </div>
+<div class="tariff-comparison">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h2>Electricity Tariff Comparison</h2>
+      </mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <form (ngSubmit)="compareTariffs()">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Annual Consumption (kWh)</mat-label>
+          <input matInput type="number" [(ngModel)]="consumption" name="consumption" required>
+        </mat-form-field>
+        <div class="form-actions">
+          <button mat-raised-button color="primary" type="submit">Compare</button>
+        </div>
+      </form>
+    </mat-card-content>
+    
+    <mat-card-actions *ngIf="tariffs.length > 0">
+      <mat-list>
+        <mat-list-item *ngFor="let tariff of tariffs">
+          {{ tariff.name }}: {{ tariff.costs | currency: 'EUR' }} per year
+        </mat-list-item>
+      </mat-list>
+    </mat-card-actions>
+  </mat-card>
+</div>
