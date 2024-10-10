@@ -14,10 +14,10 @@ public class CalculationService : ICalculationService
     _extTariffProvider = extTariffProvider;
   }
 
-  public IEnumerable<TariffInformation> CalculateTariffs(long annualCost)
+  public async Task<IEnumerable<TariffInformation>> CalculateTariffs(long consumption, CancellationToken token)
   {
     var calcStrategy = RegisterTariffs();
-    var allTariffs = _extTariffProvider.GetAllTariffs();
+    var allTariffs = await _extTariffProvider.GetAllTariffs(token);
 
     if (allTariffs == null || !allTariffs.Any())
     {
@@ -30,8 +30,8 @@ public class CalculationService : ICalculationService
 
     return tariffs.Select(tariff => new TariffInformation()
       {
-        TariffName = tariff.Name,
-        AnuallCosts = tariff.GetAnnualCost(annualCost)
+        Name = tariff.Name,
+        Costs = tariff.GetAnnualCost(consumption)
       }).ToList();
   }
 

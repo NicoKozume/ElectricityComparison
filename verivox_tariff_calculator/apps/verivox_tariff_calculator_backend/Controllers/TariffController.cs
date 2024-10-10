@@ -18,8 +18,19 @@ public class TariffController : ControllerBase
     }
 
     [HttpGet(Name = "GetTariffs")]
-    public IEnumerable<TariffInformation> Get(long annualCosts)
+    public async Task<IEnumerable<TariffInformation>> Get(long consumption, CancellationToken token)
     {
-      return _calculationService.CalculateTariffs(annualCosts);
+      _logger.LogInformation("Retrieved request for GetTariffs");
+
+      try
+      {
+        return await _calculationService.CalculateTariffs(consumption, token);
+      }
+      catch (Exception ex)
+      {
+        _logger.LogError($"Something went wrong while calculating tariffs {ex.Message}");
+        throw;
+      }
     }
+
 }

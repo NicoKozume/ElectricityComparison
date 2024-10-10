@@ -2,7 +2,7 @@ namespace verivox_tariff_calculator_backend.Models;
 
 public class TariffInformation
 {
-  public string TariffName { get; set; }
+  public string Name { get; set; } = string.Empty;
 
-  public decimal AnuallCosts { get; set; }
+  public decimal Costs { get; set; }
 }

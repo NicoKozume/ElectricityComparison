@@ -1,1 +1,14 @@
-<app-nx-welcome></app-nx-welcome> <router-outlet></router-outlet>
+<div>
+    <h2>Electricity Tariff Comparison</h2>
+    <form (ngSubmit)="compareTariffs()">
+      <label for="consumption">Annual Consumption (kWh):</label>
+      <input type="number" [(ngModel)]="consumption" name="consumption" required>
+      <button type="submit">Compare</button>
+    </form>
+  
+    <ul *ngIf="tariffs.length > 0">
+      <li *ngFor="let tariff of tariffs">
+        {{ tariff.name}}: {{ tariff.costs| currency: 'EUR' }} per year
+      </li>
+    </ul>
+  </div>
