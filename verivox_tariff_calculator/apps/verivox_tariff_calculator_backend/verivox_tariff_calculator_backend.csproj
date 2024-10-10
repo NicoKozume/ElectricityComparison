@@ -8,7 +8,29 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.9" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Repository\ProductTypeMapping.cs" />
+    <Compile Remove="Services\TariffCalculator.cs" />
+    <Compile Remove="TariffParser\TariffParser.cs\**" />
+    <Compile Remove="Models\ICalculationStrategy.cs" />
+    <Compile Remove="TariffParser\ITariffParser.cs" />
+    <Compile Remove="Models\Tariffs.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="TariffParser\TariffParser.cs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="TariffParser\TariffParser.cs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="TariffParser\TariffParser.cs\**" />
   </ItemGroup>
 
 </Project>

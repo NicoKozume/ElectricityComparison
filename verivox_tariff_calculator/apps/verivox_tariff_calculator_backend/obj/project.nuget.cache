@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "swII2UpJlbK0XuIPG3Az6nb9OVagg3XzSeumj48frpAY1TrJDQOXnGO4j9E1gxt64THgosVHE4uH6N3VJ8V9jw==",
+  "dgSpecHash": "9X1pFt/DuagiN0U8cW/rY+frhFxLuKGJQ9wvJRJ6w2yqfLvUXBz+EW0yK5vQdNjO/t60X2ifanpY6Fwv0EhNpA==",
   "success": true,
   "projectFilePath": "/Users/kenma/Documents/Nico/code/Verivox_Tariff_Calculator/verivox_tariff_calculator/apps/verivox_tariff_calculator_backend/verivox_tariff_calculator_backend.csproj",
   "expectedPackageFiles": [
     "/Users/kenma/.nuget/packages/microsoft.aspnetcore.openapi/7.0.9/microsoft.aspnetcore.openapi.7.0.9.nupkg.sha512",
     "/Users/kenma/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "/Users/kenma/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/Users/kenma/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
     "/Users/kenma/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "/Users/kenma/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "/Users/kenma/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",

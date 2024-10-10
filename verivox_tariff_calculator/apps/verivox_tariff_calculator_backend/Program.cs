@@ -1,3 +1,6 @@
+using verivox_tariff_calculator_backend.Repository;
+using verivox_tariff_calculator_backend.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<ICalculationService, CalculationService>();
+builder.Services.AddScoped<IExternalTariffProvider, ExternalTariffProvider>();
 
 var app = builder.Build();
 
