@@ -5,7 +5,7 @@ namespace verivox_tariff_calculator_backend.Models;
 public class TariffProduct
 {
   [JsonPropertyName("name")]
-  public string Name { get; set; }
+  public string Name { get; set; } = string.Empty;
 
   [JsonPropertyName("type")]
   public int Type { get; set; }
