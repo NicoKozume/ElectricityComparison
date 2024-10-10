@@ -1,4 +1,5 @@
-using verivox_tariff_calculator_backend.CalculationStrategy;
+using verivox_tariff_calculator_backend.Common.CalculationStrategy;
+using verivox_tariff_calculator_backend.Common.TariffParser;
 using verivox_tariff_calculator_backend.Models;
 using verivox_tariff_calculator_backend.Models.Tariffs;
 using verivox_tariff_calculator_backend.Repository;
@@ -24,7 +25,7 @@ public class CalculationService : ICalculationService
       return new List<TariffInformation>();
     }
 
-    var tariffParser = new TariffParser.TariffParser(calcStrategy);
+    var tariffParser = new TariffParser(calcStrategy);
 
     var tariffs = tariffParser.ParseTariffs(allTariffs);
 
@@ -56,6 +57,7 @@ public class CalculationService : ICalculationService
       return new PackagedTariff(includedKwh, baseCost, additionalKwhCost);
     });
 
+    //Add here more tariffs if needed
     return strategyFactory;
   }
 }

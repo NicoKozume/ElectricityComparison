@@ -1,6 +1,6 @@
 using verivox_tariff_calculator_backend.Models;
 
-namespace verivox_tariff_calculator_backend.TariffParser;
+namespace verivox_tariff_calculator_backend.Common.TariffParser;
 
 public interface ITariffParser
 {

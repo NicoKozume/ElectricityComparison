@@ -1,4 +1,4 @@
-using verivox_tariff_calculator_backend.CalculationStrategy;
+using verivox_tariff_calculator_backend.Common.CalculationStrategy;
 
 namespace verivox_tariff_calculator_backend.Models;
 

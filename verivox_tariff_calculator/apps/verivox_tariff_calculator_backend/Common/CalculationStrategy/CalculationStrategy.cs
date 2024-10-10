@@ -1,7 +1,6 @@
-using Newtonsoft.Json.Linq;
 using verivox_tariff_calculator_backend.Models;
 
-namespace verivox_tariff_calculator_backend.CalculationStrategy;
+namespace verivox_tariff_calculator_backend.Common.CalculationStrategy;
 
 public interface ICalculationStrategy
 {
