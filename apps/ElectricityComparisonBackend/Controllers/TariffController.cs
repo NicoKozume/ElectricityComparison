@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ElectricityComparisonBackend.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class TariffController : ControllerBase
 {
     private readonly ILogger<TariffController> _logger;

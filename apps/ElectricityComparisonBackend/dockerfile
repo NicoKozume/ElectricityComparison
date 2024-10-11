@@ -1,15 +1,29 @@
 # Stage 1: Build the .NET app
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-WORKDIR /source
-COPY . .
-WORKDIR /source/apps/ElectricityComparisonBackend
-RUN dotnet restore
-RUN dotnet publish -c Release -o /app
 
-# Stage 2: Run the .NET app
-FROM mcr.microsoft.com/dotnet/aspnet:7.0
+WORKDIR /src
+
+# Copy the .csproj and restore dependencies
+COPY ["apps/ElectricityComparisonBackend/*.csproj", "apps/ElectricityComparisonBackend/"]
+RUN dotnet restore "apps/ElectricityComparisonBackend/ElectricityComparisonBackend.csproj"
+
+# Copy the entire workspace
+COPY . .
+
+# Build the application
+WORKDIR "/src/apps/ElectricityComparisonBackend"
+RUN dotnet publish -c Release -o /app/publish
+
+# Stage 2: Runtime
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS final
+
 WORKDIR /app
-COPY --from=build /app .
-ENV ASPNETCORE_URLS=http://+:5000
-EXPOSE 5000
-ENTRYPOINT ["dotnet", "YourApp.dll"]
+
+# Copy the build output
+COPY --from=build /app/publish .
+
+# Expose port 80
+EXPOSE 80
+
+# Start the application
+ENTRYPOINT ["dotnet", "ElectricityComparisonBackend.dll"]

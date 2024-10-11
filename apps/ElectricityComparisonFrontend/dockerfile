@@ -1,15 +1,35 @@
 # Stage 1: Build the Angular app
-FROM node:18 AS build
+FROM node:18-alpine AS build
+
 WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm ci
+
+# Copy package and NX configuration files
+COPY package*.json ./
+COPY nx.json tsconfig.base.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the entire workspace
 COPY . .
-RUN npm run nx build ElectricityComparisonFrontend --prod
+
+# Build the Angular app
+RUN npx nx build ElectricityComparisonFrontend --configuration production
 
 # Stage 2: Serve the app with Nginx
 FROM nginx:alpine
+
+# Remove default Nginx configuration
+RUN rm /etc/nginx/conf.d/default.conf
+
+# Copy custom Nginx configuration
+COPY apps/ElectricityComparisonFrontend/default.conf /etc/nginx/conf.d/
+
+# Copy the built app from the previous stage
 COPY --from=build /app/dist/apps/ElectricityComparisonFrontend /usr/share/nginx/html
+
+# Expose port 80
 EXPOSE 80
+
+# Start Nginx server
 CMD ["nginx", "-g", "daemon off;"]
-
-

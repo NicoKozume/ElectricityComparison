@@ -1,21 +1,23 @@
 services:
-  frontend:
+  backend:
     build:
-      context: .
-      dockerfile: ../apps/ElectricityComparisonFrontend/Dockerfile
-    container_name: frontend
+      context: ..
+      dockerfile: apps/ElectricityComparisonBackend/Dockerfile
+    container_name: electricity-comparison-backend
     ports:
-      - "80:80"
+      - "5200:80"
     networks:
       - app-network
 
-  backend:
+  frontend:
     build:
-      context: .
-      dockerfile: ../apps/ElectricityComparisonBackend/Dockerfile
-    container_name: backend
+      context: ..
+      dockerfile: apps/ElectricityComparisonFrontend/Dockerfile
+    container_name: electricity-comparison-frontend
     ports:
-      - "5000:5000"
+      - "4200:80"
+    depends_on:
+      - backend
     networks:
       - app-network
 
