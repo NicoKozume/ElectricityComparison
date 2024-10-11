@@ -1,6 +1,6 @@
 # ElectricityComparison
 
-Welcome to the Electricity Comparison made by Nico aka KenmaKoz.
+Welcome to the Electricity Comparison made by NicoKozume.
 This is a project initiated by verivox, to test my skills
 
 ## Run the project 
