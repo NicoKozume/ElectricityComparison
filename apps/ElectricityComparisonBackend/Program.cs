@@ -3,6 +3,20 @@ using ElectricityComparisonBackend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add CORS
+builder.Services.AddCors(options =>
+{
+  options.AddPolicy("AllowSpecificOrigin", policy =>
+  {
+    policy.WithOrigins(
+        "http://localhost:4205", //docker/prod
+        "http://localhost:4200" //local
+        ) // Füge die URL des Frontends hinzu
+      .AllowAnyHeader()                      // Erlaube alle Header
+      .AllowAnyMethod();                     // Erlaube alle HTTP-Methoden
+  });
+});
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -20,6 +34,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("AllowSpecificOrigin");
 
 app.UseHttpsRedirection();
 

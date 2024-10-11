@@ -64,13 +64,12 @@
       "configurations": {
         "production": {
           "buildTarget": "ElectricityComparisonFrontend:build:production"
+
         },
         "development": {
-          "buildTarget": "ElectricityComparisonFrontend:build:development"
+          "buildTarget": "ElectricityComparisonFrontend:build:development",
+          "proxyConfig": "apps/ElectricityComparisonFrontend/src/proxy.conf.json"
         }
-      },
-      "options": {
-        "proxyConfig": "apps/ElectricityComparisonFrontend/src/proxy.conf.json"
       },
       "defaultConfiguration": "development"
     },

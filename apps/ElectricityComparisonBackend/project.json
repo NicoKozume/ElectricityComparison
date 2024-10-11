@@ -1,36 +1,36 @@
 {
-  "name": "verivox_tariff_calculator_backend",
-  "root": "apps/verivox_tariff_calculator_backend",
-  "sourceRoot": "apps/verivox_tariff_calculator_backend",
+  "name": "ElectricityComparisonBackend",
+  "root": "apps/ElectricityComparisonBackend",
+  "sourceRoot": "apps/ElectricityComparisonBackend",
   "prefix": "app",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "dotnet build apps/verivox_tariff_calculator_backend",
-        "cwd": "apps/verivox_tariff_calculator_backend"
+        "command": "dotnet build apps/ElectricityComparisonBackend",
+        "cwd": "apps/ElectricityComparisonBackend"
       }
     },
     "serve": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "dotnet run --project apps/verivox_tariff_calculator_backend",
-        "cwd": "apps/verivox_tariff_calculator_backend"
+        "command": "dotnet run --project apps/ElectricityComparisonBackend",
+        "cwd": "apps/ElectricityComparisonBackend"
       }
     },
     "test": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "dotnet test apps/verivox_tariff_calculator_backend",
-        "cwd": "apps/verivox_tariff_calculator_backend"
+        "command": "dotnet test apps/ElectricityComparisonBackend",
+        "cwd": "apps/ElectricityComparisonBackend"
       }
     },
     "clean": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "dotnet clean apps/verivox_tariff_calculator_backend",
-        "cwd": "apps/verivox_tariff_calculator_backend"
+        "command": "dotnet clean apps/ElectricityComparisonBackend",
+        "cwd": "apps/ElectricityComparisonBackend"
       }
     }
   },

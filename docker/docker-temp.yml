@@ -1,0 +1,28 @@
+# services:
+#   electricity-comparison-frontend:
+#     image: electricity-comparison-frontend-image
+#     container_name: frontend
+#     build:
+#       context: ../
+#       dockerfile: ./docker/electricity-comparison-frontend
+#     ports:
+#       - "4200:80"  # Das Frontend wird lokal auf Port 4200 verfügbar sein
+#     depends_on:
+#       - electricity-comparison-backend
+#     networks:
+#       - app-network
+
+#   electricity-comparison-backend:
+#     image: electricity-comparison-backend-image
+#     container_name: backend
+#     build:
+#       context: ../apps/ElectricityComparisonBackend
+#       dockerfile: ../../docker/electricity-comparison-backend
+#     ports:
+#       - "5200:80"  # Das Backend wird lokal auf Port 5000 verfügbar sein
+#     networks:
+#       - app-network
+
+# networks:
+#   app-network:
+#     driver: bridge
